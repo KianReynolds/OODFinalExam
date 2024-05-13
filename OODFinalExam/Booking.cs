@@ -12,7 +12,11 @@ namespace OODFinalExam
         public DateTime BookingsDate { get; set; }
         public int NumberOFParticipants { get; set; }
 
-        
+        //Foreign Key
+        public int CustomerID;
+
+        //Navigation property for customer
+        public virtual Customer Customer { get; set; }
 
     }
 
@@ -21,5 +25,15 @@ namespace OODFinalExam
         public int CustomerID { get; set; }
         public string Name { get; set; }
         public string ContactNumber { get; set; }
+
+        //one-to-many relationship
+        public List<Booking> Bookings { get; set; }
+
+        public Customer() 
+        { 
+            Bookings = new List<Booking>();
+        }
     }
+
+
 }
