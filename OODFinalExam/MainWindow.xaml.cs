@@ -32,19 +32,23 @@ namespace OODFinalExam
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-
-
-            //query the database using LINQ
-            using (db)
+            Customer selectedCustomer = lbxBookingInfo.SelectedItem as Customer;
+            if (selectedCustomer != null && dpDate.SelectedDate.HasValue)
             {
-                var query1 = from c in db.Customers
-                             select c;
+                DateTime selectedDate
 
-                var result = query1.ToList();
+                //query the database using LINQ
+                using (db)
+                {
+                    var query1 = from c in db.Customers
+                                 select c;
 
-                lbxBookingInfo.ItemsSource = result;
+                    var result = query1.ToList();
+
+                    lbxBookingInfo.ItemsSource = result;
 
 
+                }
             }
         }
     }
