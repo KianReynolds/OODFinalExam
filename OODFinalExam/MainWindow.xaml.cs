@@ -30,25 +30,50 @@ namespace OODFinalExam
 
 
 
+
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             Customer selectedCustomer = lbxBookingInfo.SelectedItem as Customer;
             if (selectedCustomer != null && dpDate.SelectedDate.HasValue)
             {
-                DateTime selectedDate
+                DateTime selectedDate = dpDate.SelectedDate.Value;
+
+                int bookingsCount = db.Bookings.Count(b => b.CustomerID == selectedCustomer.CustomerID && b.BookingsDate == selectedDate.Date);
+
+                int availableSeats = 40 - bookingsCount;
+
+                //Bookings and Available Space on bootom of xaml screen
+                tblkBookingsCount.Text = $"Bookings: {bookingsCount}";
+
+                tblkAvailable.Text = $"Available: {availableSeats}";
 
                 //query the database using LINQ
-                using (db)
-                {
-                    var query1 = from c in db.Customers
-                                 select c;
+                
+            }
+        }
 
-                    var result = query1.ToList();
+        private void btnCustomerSearch_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 secondWindow = new Window1();
 
-                    lbxBookingInfo.ItemsSource = result;
+            secondWindow.Owner = this;
+
+            secondWindow.Show();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            using (db)
+            {
+                var query1 = from c in db.Customers
+                             select c.Name + c.ContactNumber ;
+                             
+
+                var result = query1.ToList();
+
+                lbxBookingInfo.ItemsSource = result;
 
 
-                }
             }
         }
     }
