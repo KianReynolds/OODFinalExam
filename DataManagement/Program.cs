@@ -19,7 +19,10 @@ namespace DataManagement
                 Customer c2 = new Customer() { Name = "Mary Smith", ContactNumber = "086 546 3214" };
                 Customer c3 = new Customer() { Name = "Jo Doyle", ContactNumber = "087 1221 222" };
 
-                
+                Booking b1 = new Booking() { BookingsDate = "19/04/2024", NumberOFParticipants = 2};
+
+
+
                 //Add customers
                 db.Customers.Add(c1);
                 db.Customers.Add(c2);

@@ -20,14 +20,14 @@
         <ListBox x:Name="lbxBookingInfo" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,64,0,0" Grid.RowSpan="2"/>
         <Label Grid.Column="1" Content="New Booking" HorizontalAlignment="Left" Margin="40,14,0,0" VerticalAlignment="Top" Height="40" Width="132" FontSize="18" FontWeight="Bold"/>
         <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="40,32,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Center" VerticalAlignment="Center" SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+        <DatePicker x:Name="dpDate" HorizontalAlignment="Center" VerticalAlignment="Center" SelectedDateChanged="DatePicker_SelectedDateChanged"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="42,98,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"><Run Language="en-ie" Text="Number of customers"/></TextBlock>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="42,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="130"><Run Language="en-ie" Text="Customer Name"/></TextBlock>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="42,190,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"><Run Language="en-ie" Text="Contact Number"/></TextBlock>
         <Button x:Name="btnCustomerSearch" Grid.Column="1" Content="Customer Search" HorizontalAlignment="Left" Margin="91,254,0,0" Grid.Row="1" VerticalAlignment="Top" Height="18" Width="106"/>
-        <TextBlock HorizontalAlignment="Left" Margin="30,32,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Capacity" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="30,32,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Capacity 40" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="104,32,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Bookings" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="198,32,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Available" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="178,32,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Available" VerticalAlignment="Top"/>
         <Button Content="Deleting Button" HorizontalAlignment="Left" Margin="360,34,0,0" Grid.Row="2" VerticalAlignment="Top" Height="20" Width="121"/>
 
 

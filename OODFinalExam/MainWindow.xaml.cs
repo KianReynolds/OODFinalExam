@@ -37,7 +37,14 @@ namespace OODFinalExam
             //query the database using LINQ
             using (db)
             {
-                
+                var query1 = from c in db.Customers
+                             select c;
+
+                var result = query1.ToList();
+
+                lbxBookingInfo.ItemsSource = result;
+
+
             }
         }
     }
