@@ -20,9 +20,25 @@ namespace OODFinalExam
     /// </summary>
     public partial class MainWindow : Window
     {
+        private CustomerData db = new CustomerData("OOD_KianReynolds");
         public MainWindow()
         {
             InitializeComponent();
+
+        }
+
+
+
+
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+
+            //query the database using LINQ
+            using (db)
+            {
+                
+            }
         }
     }
 }
